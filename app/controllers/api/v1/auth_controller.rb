@@ -23,5 +23,9 @@ class Api::V1::AuthController < ApplicationController
         end
 
     end
+
+    def show
+        render json: {hello: "world"}
+    end
     
 end
