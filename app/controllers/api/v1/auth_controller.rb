@@ -7,7 +7,14 @@ class Api::V1::AuthController < ApplicationController
         if user
             if user.authenticate(params[:password])
                 #create token and send to front end, save it in localStorage
-                render json: user
+
+                payload = {user_id: user.id}
+
+                hmac_secret = "$3CRET"
+
+                token = JWT.encode(payload, hmac_secret, 'HS256')
+
+                render json: {user: UserSerializer.new(user), token: token}
             else
                 render json: {error: "Wrong password."}
             end
