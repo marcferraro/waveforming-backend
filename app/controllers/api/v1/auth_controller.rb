@@ -6,6 +6,7 @@ class Api::V1::AuthController < ApplicationController
         
         if user
             if user.authenticate(params[:password])
+                #create token and send to front end, save it in localStorage
                 render json: user
             else
                 render json: {error: "Wrong password."}
