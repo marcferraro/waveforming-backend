@@ -27,11 +27,20 @@ class Api::V1::AuthController < ApplicationController
     def show
         token = request.headers[:authorization].split(' ')[1]
 
-        decoded_token = JWT.decode(token, "$3CRET", true, {algorithm: 'HS256'})
+        begin
+            decoded_token = JWT.decode(token, "$3CRET", true, {algorithm: 'HS256'})
+            user = User.find_by(id: decoded_token[0]['user_id'])
+            if user
+                render json: user
+            else
+                render json: {error: "User not found."}  
+            end
+        rescue
+            render json: {error: "Invalid token."}
+        end
 
-        user = User.find_by(id: decoded_token[0]['user_id'])
 
-        render json: {hello: "world"}
+        
     end
     
 end
