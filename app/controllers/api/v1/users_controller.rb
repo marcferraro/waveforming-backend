@@ -26,6 +26,10 @@ class Api::V1::UsersController < ApplicationController
         end
     end
 
+    def set_avatar
+        byebug
+    end
+
     private
 
     def new_user_params
