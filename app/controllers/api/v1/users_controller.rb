@@ -27,7 +27,17 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def set_avatar
-        byebug
+        # byebug
+        user = User.find_by(id: params[:id])
+        
+        user.avatar.attach(params[:avatar])
+        
+        if user.save
+            render json: {success: "Avatar added."}
+        else 
+            render json: {error: "Unable to add Avatar."}
+        end
+
     end
 
     private
