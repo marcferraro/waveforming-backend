@@ -27,7 +27,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def set_avatar
-        # byebug
+
         user = User.find_by(id: params[:id])
         
         user.avatar = params[:avatar]
