@@ -30,10 +30,10 @@ class Api::V1::UsersController < ApplicationController
         # byebug
         user = User.find_by(id: params[:id])
         
-        user.avatar.attach(params[:avatar])
-        
-        if user.save
-            render json: {success: "Avatar added."}
+        user.avatar = params[:avatar]
+
+        if user.save!
+            render json: {avatarUrl: user.avatar.url}
         else 
             render json: {error: "Unable to add Avatar."}
         end
@@ -45,4 +45,9 @@ class Api::V1::UsersController < ApplicationController
     def new_user_params
         params.require(:user).permit(:username, :password, :password_confirmation)
     end
+    # def user_params
+    #     params.permit(:username, :password, :password_confirmation)
+    # end
+
+    
 end
