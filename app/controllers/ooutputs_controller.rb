@@ -1,0 +1,2 @@
+class OoutputsController < ApplicationController
+end
