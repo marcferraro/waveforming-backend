@@ -5,4 +5,14 @@ class Api::V1::OoutputsController < ApplicationController
 
         render json: ooutputs
     end
+
+    def create
+        byebug
+    end
+
+    private
+
+    def ooutput_params
+
+    end
 end
