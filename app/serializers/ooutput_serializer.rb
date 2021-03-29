@@ -1,3 +1,3 @@
 class OoutputSerializer < ActiveModel::Serializer
-  attributes :id, :image, :user_id
+  attributes :id, :ooutput, :user_id
 end
