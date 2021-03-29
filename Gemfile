@@ -18,6 +18,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem "active_model_serializers"
 gem 'jwt'
 gem 'carrierwave', '~> 2.0'
+gem 'carrierwave-data-uri'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
