@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2021_03_30_144619) do
 
   create_table "colors", force: :cascade do |t|
     t.string "hex"
+    t.integer "input_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
