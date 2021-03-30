@@ -7,27 +7,13 @@ class OoutputsController < ApplicationController
     end
 
     def create
-        byebug
+
+        if params[:title] == ""
+            params[:title] = "Untitled"
+        end
+
         ooutput = Ooutput.new(user_id: params[:user_id], input_id: params[:input_id], title: params[:title])
         ooutput.ooutput_data_uri = params[:ooutput]
-
-        # if params[:input_id]
-        #     ooutput.input_id = params[:input_id]
-
-            
-        # elsif params[:input]
-        #     if !params[:input_title]
-        #         params[:input_title] = "Untitled"
-        #     end
-
-        #     input = Input.new(title: params[:input_title])
-        #     input.input_data_uri = params[:input]
-        #     input.save
-
-        #     ooutput.input_id = 
-
-            
-        # end
         
         if ooutput.save
             render json: ooutput
