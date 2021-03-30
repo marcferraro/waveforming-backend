@@ -1,4 +1,4 @@
-class Api::V1::InputsController < ApplicationController
+class InputsController < ApplicationController
 
     def index
         inputs = Input.all
@@ -11,7 +11,6 @@ class Api::V1::InputsController < ApplicationController
             params[:input_title] = "Untitled"
         end
         
-        byebug
         input = Input.new(title: params[:input_title], user_id: params[:user_id])
         input.input_data_uri = params[:input]
 
