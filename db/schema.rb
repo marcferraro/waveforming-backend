@@ -10,12 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_28_230853) do
+ActiveRecord::Schema.define(version: 2021_03_30_144619) do
+
+  create_table "colors", force: :cascade do |t|
+    t.string "hex"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "inputs", force: :cascade do |t|
+    t.string "title"
+    t.integer "user_id"
+    t.string "input"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "ooutputs", force: :cascade do |t|
     t.string "ooutput"
     t.string "title"
     t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "stars", force: :cascade do |t|
+    t.string "user_id"
+    t.string "ooutput_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
