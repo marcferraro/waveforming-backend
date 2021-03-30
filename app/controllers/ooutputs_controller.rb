@@ -7,6 +7,7 @@ class Api::V1::OoutputsController < ApplicationController
     end
 
     def create
+        byebug
         ooutput = Ooutput.new(ooutput_params)
         ooutput.ooutput_data_uri = params[:ooutput]
 
@@ -21,6 +22,6 @@ class Api::V1::OoutputsController < ApplicationController
     private
 
     def ooutput_params
-        params.permit(:user_id, :title)
+        params.permit(:user_id, :title, :ooutput)
     end
 end
