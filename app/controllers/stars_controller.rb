@@ -5,6 +5,12 @@ class StarsController < ApplicationController
         render json: stars
     end
 
+    def show
+        star = Star.find_by(id: params[:id])
+
+        render json: star
+    end
+
     def create
 
         star = Star.new(star_params)
@@ -15,6 +21,10 @@ class StarsController < ApplicationController
         else
             render json: {error: "Unable to star."}
         end
+    end
+    
+    def destroy
+        byebug
     end
 
     private
