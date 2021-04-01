@@ -1,5 +1,5 @@
 class OoutputSerializer < ActiveModel::Serializer
-  attributes :id, :ooutput, :user_id, :title, :input_id, :user, :input
+  attributes :id, :ooutput, :user_id, :title, :input_id, :user, :input, :stars
 
   def user
     object.user
@@ -9,7 +9,7 @@ class OoutputSerializer < ActiveModel::Serializer
     object.input
   end
 
-  def star
+  def stars
     object.stars
   end
 end
