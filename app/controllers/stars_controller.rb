@@ -17,7 +17,7 @@ class StarsController < ApplicationController
 
         if star.save
             ooutput= Ooutput.find_by(id: params[:ooutput_id])
-            render json: ooutput
+            render json: {ooutput: OoutputSerializer.new(ooutput), star: StarSerializer.new(star)}
         else
             render json: {error: "Unable to star."}
         end
