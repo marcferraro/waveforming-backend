@@ -8,4 +8,8 @@ class OoutputSerializer < ActiveModel::Serializer
   def input
     object.input
   end
+
+  def star
+    object.stars
+  end
 end
