@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 2021_03_30_154408) do
   end
 
   create_table "stars", force: :cascade do |t|
-    t.string "user_id"
-    t.string "ooutput_id"
+    t.integer "user_id"
+    t.integer "ooutput_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
