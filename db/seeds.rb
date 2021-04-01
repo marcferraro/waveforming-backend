@@ -7,5 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+OOutput.destroy_all
+Input.destroy_all
+Star.destroy_all
+Color.destroy_all
 
-user1 = User.create(name: "Marc", username: "marcus", password: "123", password_confirmation: "123")
+
+# user1 = User.create(name: "Marc", username: "marcus", password: "123", password_confirmation: "123")
