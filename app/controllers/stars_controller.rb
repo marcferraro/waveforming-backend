@@ -24,7 +24,14 @@ class StarsController < ApplicationController
     end
     
     def destroy
-        byebug
+        star = Star.find_by(id: params[:id])
+
+        if star.destroy
+            ooutput= Ooutput.find_by(id: star.ooutput_id)
+            render json: ooutput
+        else
+            render json: {error: "Unable to unstar."}
+        end
     end
 
     private
