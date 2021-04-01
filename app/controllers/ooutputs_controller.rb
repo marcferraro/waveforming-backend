@@ -12,7 +12,7 @@ class OoutputsController < ApplicationController
             params[:title] = "Untitled"
         end
 
-        ooutput = Ooutput.new(user_id: params[:user_id], input_id: params[:input_id], title: params[:title])
+        ooutput = Ooutput.new(user_id: params[:user_id], input_id: params[:input_id], title: params[:title], n: params[:n], symmetry: params[:symmetry], ground: params[:ground], periodic_input: params[:periodic_input], periodic_output: params[:periodic_output])
         ooutput.ooutput_data_uri = params[:ooutput]
         
         if ooutput.save
