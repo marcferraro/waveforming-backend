@@ -7,6 +7,7 @@ class InputsController < ApplicationController
     end
 
     def create
+        byebug
         if params[:input_title] == ""
             params[:input_title] = "Untitled"
         end
@@ -14,7 +15,16 @@ class InputsController < ApplicationController
         input = Input.new(title: params[:input_title], user_id: params[:user_id])
         input.input_data_uri = params[:input]
 
+        
         if input.save
+
+            params.each do |key, value|
+                if key.to_s.include? "color"
+                    color = Color.new(hex: value, input_id: input.id)
+                    color.save
+                end
+            end
+
             render json: input
         else
             render json: {error: "Unable to save input."}
