@@ -7,7 +7,6 @@ class InputsController < ApplicationController
     end
 
     def create
-        byebug
         if params[:input_title] == ""
             params[:input_title] = "Untitled"
         end
