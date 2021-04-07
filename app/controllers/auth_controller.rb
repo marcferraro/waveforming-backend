@@ -10,7 +10,7 @@ class AuthController < ApplicationController
 
                 payload = {user_id: user.id}
 
-                hmac_secret = "$3CRET"
+                hmac_secret = Rails.application.credentials.hmac_secret
 
                 token = JWT.encode(payload, hmac_secret, 'HS256')
 
@@ -26,9 +26,10 @@ class AuthController < ApplicationController
 
     def show
         token = request.headers[:authorization].split(' ')[1]
+        hmac_secret = Rails.application.credentials.hmac_secret
 
         begin
-            decoded_token = JWT.decode(token, "$3CRET", true, {algorithm: 'HS256'})
+            decoded_token = JWT.decode(token, hmac_secret, true, {algorithm: 'HS256'})
             user = User.find_by(id: decoded_token[0]['user_id'])
             if user
                 render json: user

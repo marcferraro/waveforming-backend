@@ -7,7 +7,6 @@ class UsersController < ApplicationController
     end
 
     def create
-
         user = User.new(new_user_params)
 
         if user.save
@@ -15,14 +14,14 @@ class UsersController < ApplicationController
 
                 payload = {user_id: user.id}
 
-                hmac_secret = "$3CRET"
+                hmac_secret = Rails.application.credentials.hmac_secret
 
                 token = JWT.encode(payload, hmac_secret, 'HS256')
 
                 render json: {user: UserSerializer.new(user), token: token}
         else
             render json: {error: "Unable to create user."}
-            # add more detailed errors later
+            # add more detailed errors later]
         end
     end
 
