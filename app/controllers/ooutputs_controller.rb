@@ -23,7 +23,7 @@ class OoutputsController < ApplicationController
     end
 
     def destroy
-        byebug
+        
         ooutput = Ooutput.find_by(id: params[:id])
 
         if ooutput.stars.destroy_all
