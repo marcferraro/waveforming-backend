@@ -22,6 +22,10 @@ class OoutputsController < ApplicationController
         end
     end
 
+    def destroy
+        byebug
+    end
+
     private
 
     def ooutput_params_new_input
