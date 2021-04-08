@@ -24,6 +24,18 @@ class OoutputsController < ApplicationController
 
     def destroy
         byebug
+        ooutput = Ooutput.find_by(id: params[:id])
+
+        if ooutput.stars.destroy_all
+            if ooutput.destroy
+                render json: {id: ooutput.id}
+            else
+                render json: {error: "Unable to delete."}
+            end
+        else
+            render json: {error: "Unable to delete."}
+        end
+
     end
 
     private
