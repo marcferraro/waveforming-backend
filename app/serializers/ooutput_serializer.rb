@@ -14,6 +14,8 @@ class OoutputSerializer < ActiveModel::Serializer
   end
 
   def input_username
-    object.input.user.username
+    if object.input
+      object.input.user.username
+    end
   end
 end
