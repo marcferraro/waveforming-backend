@@ -19,8 +19,8 @@ gem "active_model_serializers"
 gem 'jwt'
 gem 'carrierwave', '~> 2.0'
 gem 'carrierwave-data-uri'
-# gem 'carrierwave-aws'
-# gem 'aws-sdk-rails'
+gem 'aws-sdk-rails'
+gem 'carrierwave-aws'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
