@@ -39,6 +39,10 @@ class UsersController < ApplicationController
 
     end
 
+    def update_username
+        byebug
+    end
+
     private
 
     def new_user_params
