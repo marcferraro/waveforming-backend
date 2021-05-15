@@ -43,6 +43,12 @@ class UsersController < ApplicationController
         user = User.find_by(id: params[:id])
 
         user.username = params[:username]
+
+        if user.save!
+
+        else
+
+        end
     end
 
     private
