@@ -47,7 +47,7 @@ class UsersController < ApplicationController
         if user.save!
 
         else
-
+            render json: {error: "Unable to update username."}
         end
     end
 
