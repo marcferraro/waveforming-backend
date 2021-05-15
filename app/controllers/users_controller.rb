@@ -40,6 +40,8 @@ class UsersController < ApplicationController
     end
 
     def update_username
+        user = User.find_by(id: params[:id])
+
         
     end
 
