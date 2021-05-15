@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     end
 
     def update_username
-        byebug
+        
     end
 
     private
