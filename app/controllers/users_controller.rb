@@ -45,7 +45,7 @@ class UsersController < ApplicationController
         user.username = params[:username]
 
         if user.save!
-
+            render json: user
         else
             render json: {error: "Unable to update username."}
         end
