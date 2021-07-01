@@ -1,7 +1,6 @@
 class AuthController < ApplicationController
 
     def create
-
         user = User.find_by(username: params[:username])
         
         if user
@@ -21,7 +20,6 @@ class AuthController < ApplicationController
         else
             render json: {error: "User not found."}
         end
-
     end
 
     def show
@@ -38,10 +36,7 @@ class AuthController < ApplicationController
             end
         rescue
             render json: {error: "Invalid token."}
-        end
-
-
-        
+        end 
     end
     
 end

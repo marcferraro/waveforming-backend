@@ -7,7 +7,6 @@ class OoutputsController < ApplicationController
     end
 
     def create
-
         if params[:title] == ""
             params[:title] = "Untitled"
         end
@@ -23,7 +22,6 @@ class OoutputsController < ApplicationController
     end
 
     def destroy
-        
         ooutput = Ooutput.find_by(id: params[:id])
 
         if ooutput.stars.destroy_all
