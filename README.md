@@ -1,24 +1,7 @@
-# README
+# Waveforming
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Waveforming is a platform for anyone to easily create unique art. It utilizes Maxim Gumin's wave function collapse algorithm, transferred to Javascript by Kevin Chapelier.
 
-Things you may want to cover:
+Users can paint an image that the algorithm will receive and then riff on to create the output image.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## [Watch the demo!](https://www.youtube.com/watch?v=HfH4BONEcgU)
